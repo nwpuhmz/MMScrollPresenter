@@ -65,9 +65,9 @@ static int const pageCtrlHeight = 10;
 {
     
     self.titleScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - titleViewHeight, self.frame.size.width * [self.pageArray count], titleViewHeight)];
-    
+    [self.titleScrollView setScrollEnabled:NO];
     [self addSubview:self.titleScrollView];
-    self.pageCtl = [[UIPageControl alloc]initWithFrame:CGRectMake(0,self.frame.size.height - titleViewHeight/2, self.frame.size.width, pageCtrlHeight)];
+    self.pageCtl = [[UIPageControl alloc]initWithFrame:CGRectMake(0,self.frame.origin.y +self.frame.size.height-titleViewHeight/2, self.frame.size.width, pageCtrlHeight)];
     self.pageCtl.numberOfPages = self.pageArray.count;
     
     [self.pageCtl.layer setCornerRadius:8];
